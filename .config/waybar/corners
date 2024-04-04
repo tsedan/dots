@@ -1,6 +1,8 @@
 {
+  "name": "corners",
   "layer": "top",
   "mode": "overlay",
+  "height": 50,
   "modules-left": [],
   "modules-center": [],
   "modules-right": [],

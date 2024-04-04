@@ -1,5 +1,7 @@
 {
+  "name": "main",
   "layer": "top",
+  "height": "34",
   "modules-left": ["hyprland/workspaces", "hyprland/window"],
   "modules-center": [],
   "modules-right": ["backlight", "pulseaudio", "battery", "clock"],
