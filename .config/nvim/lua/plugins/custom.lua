@@ -1,12 +1,19 @@
 return {
-  -- add moonbow
-  { "arturgoms/moonbow.nvim" },
+  {
+    "folke/tokyonight.nvim",
+    opts = {
+      transparent = true,
+      styles = {
+        sidebars = "transparent",
+        floats = "transparent",
+      },
+    },
+  },
 
-  -- Configure LazyVim to load moonbow
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "moonbow",
+      colorscheme = "tokyonight",
     },
   },
 }
