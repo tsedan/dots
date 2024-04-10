@@ -1,6 +1,7 @@
 # aliases
-alias la="ls -aG"
-alias ls="ls -G"
+alias ls="ls --color=auto"
+alias la="ls -a --color=auto"
+alias ll="ls -al --color=auto"
 alias vi="nvim"
 alias py="python3"
 
