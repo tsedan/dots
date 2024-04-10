@@ -1,4 +1,5 @@
 return {
+  -- configure color theme
   {
     "folke/tokyonight.nvim",
     opts = {
@@ -6,10 +7,16 @@ return {
       styles = {
         sidebars = "transparent",
         floats = "transparent",
+        keywords = { bold = true },
+        functions = { bold = true },
       },
+      on_colors = function(colors)
+        colors.bg_statusline = colors.none
+      end,
     },
   },
 
+  -- use color theme
   {
     "LazyVim/LazyVim",
     opts = {
