@@ -55,15 +55,13 @@ return {
         evaluate_single = true,
         header = logo,
         items = {
-          new_section("Find file",       "Telescope find_files",                                   "Telescope"),
-          new_section("Recent files",    "Telescope oldfiles",                                     "Telescope"),
-          new_section("Grep text",       "Telescope live_grep",                                    "Telescope"),
-          new_section("Config",          "lua require('lazyvim.util').telescope.config_files()()", "Config"),
-          new_section("Extras",          "LazyExtras",                                             "Config"),
-          new_section("Lazy",            "Lazy",                                                   "Config"),
-          new_section("New file",        "ene | startinsert",                                      "Built-in"),
-          new_section("Quit",            "qa",                                                     "Built-in"),
-          new_section("Session restore", [[lua require("persistence").load()]],                    "Session"),
+          new_section("New file",        "ene | startinsert",                      "Files"),
+          new_section("Find file",       "Telescope find_files",                   "Files"),
+          new_section("Recent files",    "Telescope oldfiles",                     "Files"),
+          new_section("Grep text",       "Telescope live_grep",                    "Files"),
+          new_section("Session restore", [[lua require("persistence").load()]],    "Management"),
+          new_section("Packages",        "Lazy",                                   "Management"),
+          new_section("Quit",            "qa",                                     "Management"),
         },
         content_hooks = {
           starter.gen_hook.adding_bullet(pad .. "░ ", false),
@@ -93,7 +91,7 @@ return {
           local stats = require("lazy").stats()
           local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
           local pad_footer = string.rep(" ", 0)
-          starter.config.footer = pad_footer .. "⚡ loaded " .. stats.count .. " plugins in " .. ms .. "ms"
+          starter.config.footer = pad_footer .. "⚡ " .. stats.count .. " plugins, " .. ms .. "ms"
           pcall(starter.refresh)
         end,
       })
