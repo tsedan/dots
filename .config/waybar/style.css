@@ -9,10 +9,10 @@ window#waybar.corners {
   background: transparent;
   margin-top: 34px;
 
-  border-top-left-radius: 24px;
-  border-top-right-radius: 24px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
 
-  box-shadow: 0 -24px 0 0 rgba(0, 0, 0, 0.83);
+  box-shadow: 0 -25px 0 0 rgba(0, 0, 0, 0.83);
 }
 
 window#waybar.main {
