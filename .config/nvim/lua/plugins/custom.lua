@@ -101,6 +101,9 @@ return {
   {
     "nvim-neo-tree/neo-tree.nvim",
     opts = {
+      window = {
+        width = 25,
+      },
       filesystem = {
         filtered_items = {
           visible = true,
@@ -108,9 +111,8 @@ return {
           hide_dotfiles = false,
           hide_gitignored = true,
           hide_by_name = {
-            -- '.git',
-            -- '.DS_Store',
-            -- 'thumbs.db',
+            ".git",
+            ".DS_Store",
           },
           never_show = {},
         },
