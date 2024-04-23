@@ -12,4 +12,4 @@ PROMPT="%F{10}%n %F{8}@ %F{7}%1~ %F{8}%# %f"
 source ${ZPATH:-/usr}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # ssh workaround
-export TERM="xterm-256color"
+# export TERM="xterm-256color"
