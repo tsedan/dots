@@ -6,8 +6,7 @@ alias ll="ls -al --color=auto"
 alias vi="nvim"
 alias py="python3"
 
-alias s="kitty +kitten ssh"
-alias c="git commit -a -m"
+alias ssh="kitten ssh"
 
 # custom prompt
 PROMPT="%F{10}%n %F{8}@ %F{7}%1~ %F{8}%# %f"
