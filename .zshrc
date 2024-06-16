@@ -1,3 +1,6 @@
+# exports
+export TERM="xterm-256color"
+
 # aliases
 alias ls="ls --color=auto"
 alias la="ls -a --color=auto"
