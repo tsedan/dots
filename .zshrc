@@ -1,3 +1,7 @@
+include () {
+  [[ -f "$1" ]] && source "$1"
+}
+
 # exports
 export TERM="xterm-256color"
 
@@ -15,4 +19,4 @@ alias ssh="kitten ssh"
 PROMPT="%F{10}%n %F{8}@ %F{7}%1~ %F{8}%# %f"
 
 # zsh plugins
-source ${ZPATH:-/usr}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+include ${ZPATH:-/usr}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
