@@ -5,4 +5,4 @@ I'm planning to write installers for the required dependencies.
 
 # showcase
 
-![showcase image](showcase/screenshot.png)
+![showcase image](Pictures/dots/screenshot.jpg)
