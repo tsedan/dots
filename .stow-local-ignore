@@ -1,5 +1,7 @@
 # Our stuff
 
+.DS_Store
+
 # GNU stow defaults
 
 RCS
@@ -14,7 +16,7 @@ _darcs
 \.hg
 
 \.git
-\.gitignore
+# \.gitignore
 \.gitmodules
 
 .+~          # emacs backup files
