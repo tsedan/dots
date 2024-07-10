@@ -1,8 +1,4 @@
 # dots
 
-This repo holds my dotfiles, which are built to work both on mac and on asahi linux.
-I'm planning to write installers for the required dependencies.
-
-# showcase
-
-![showcase image](Pictures/dots/screenshot.jpg)
+This repo holds my dotfiles, which are built to work both on *NIX type systems.
+I regularly test them on Mac, Ubuntu, and sometimes Fedora.

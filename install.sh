@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 fprint() {
   echo "\e[34m$1\e[0m"
@@ -7,6 +7,8 @@ fprint() {
 platform=$(uname | tr '[:upper:]' '[:lower:]')
 if [[ "$platform" == 'linux' ]]; then
   # linux
+
+  # TODO: automate installation
 
 elif [[ "$platform" == 'darwin' ]]; then
   # macOS

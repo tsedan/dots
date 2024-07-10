@@ -1,26 +1,10 @@
-# Our stuff
+install.sh
+mac_reqs.txt
 
-.DS_Store
-
-# GNU stow defaults
-
-RCS
-.+,v
-
-CVS
-\.\#.+       # CVS conflict files / emacs lock files
-\.cvsignore
-
-\.svn
-_darcs
-\.hg
+\.DS_Store
 
 \.git
-# \.gitignore
 \.gitmodules
-
-.+~          # emacs backup files
-\#.*\#       # emacs autosave files
 
 ^/README.*
 ^/LICENSE.*

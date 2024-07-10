@@ -1,48 +1,66 @@
 {
   "name": "main",
   "layer": "top",
-
-  "modules-left": ["hyprland/workspaces", "hyprland/window"],
+  "modules-left": [
+    "hyprland/workspaces",
+    "hyprland/window"
+  ],
   "modules-center": [],
-  "modules-right": ["backlight", "pulseaudio", "battery", "clock"],
-
+  "modules-right": [
+    "backlight",
+    "pulseaudio",
+    "battery",
+    "clock"
+  ],
   "hyprland/window": {
     "max-length": 50
   },
-
   "hyprland/workspaces": {
     "format": "{name}",
-    "tooltip": false,
+    "tooltip": false
   },
-
   "clock": {
     "format": "{:%H:%M}",
-    "tooltip": false,
+    "tooltip": false
   },
-
   "backlight": {
     "device": "intel_backlight",
     "format": "{percent}% <span color='#b4befe'>{icon}</span>",
-    "format-icons": ["", "", "", "", "", "", "", "", ""],
-    "tooltip": false,
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tooltip": false
   },
-
   "pulseaudio": {
     "format": "{volume:2}% <span color='#b4befe'>{icon}</span>",
     "format-muted": "MUTE",
-
     "format-icons": {
       "headphones": "",
-      "default": ["", ""]
+      "default": [
+        "",
+        ""
+      ]
     },
-
     "on-click": "pamixer -t",
-    "on-click-right": "pavucontrol",
+    "on-click-right": "pavucontrol"
   },
-
   "battery": {
     "format": "{capacity}% <span color='#b4befe'>{icon}</span>",
     "format-charging": "{capacity}% <span color='#03fc94'>{icon}</span>",
-    "format-icons": ["", "", "", "", ""],
-  },
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  }
 }
