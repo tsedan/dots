@@ -13,8 +13,12 @@ alias ll="ls -al --color=auto"
 alias vi="nvim"
 alias py="python3"
 
-# custom prompt
-PROMPT="%F{10}%n %F{8}@ %F{7}%1~ %F{8}%# %f"
-
 # zsh plugins
 include ${ZPATH:-/usr}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# custom prompt
+if [ -n "$SSH_TTY" ]; then
+  PROMPT="%F{magenta}%n %F{8}@ %F{7}%1~ %F{8}%# %f"
+else
+  PROMPT="%F{green}%n %F{8}@ %F{7}%1~ %F{8}%# %f"
+fi
