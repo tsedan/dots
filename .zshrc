@@ -2,11 +2,26 @@
 export TERM="xterm-256color"
 
 # functions
+include() {
+  [[ -f "$1" ]] && source "$1"
+}
+
 autoload -Uz vcs_info
-precmd() { vcs_info }
-include() { [[ -f "$1" ]] && source "$1" }
-lt() { tree -a -I '.git' -C --noreport -L "${1:-2}" }
-tm() { tmux new -A -s "${1:-ssh}" }
+precmd() {
+  vcs_info
+}
+
+up() {
+  /bin/bash ~/dots/misc/update.sh
+}
+
+lt() {
+  tree -a -I '.git' -C --noreport -L "${1:-2}"
+}
+
+tm() {
+  tmux new -A -s "${1:-ssh}"
+}
 
 # aliases
 alias ls="ls --color=auto"
@@ -39,5 +54,4 @@ else
   PROMPT='%F{green}'
 fi
 PROMPT=$PROMPT'%n %F{8}@ %F{7}%1~ %F{8}%# %f'
-RPROMPT='${vcs_info_msg_0_}%F{8}%(?..%F{red})%*%f'
-
+RPROMPT='${vcs_info_msg_0_}%(?.%F{8}.%F{red})%*%f'
