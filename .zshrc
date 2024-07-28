@@ -17,7 +17,7 @@ alias py="python3"
 include ${ZPATH:-/usr}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # custom prompt
-if [ -n "$SSH_CLIENT" ]; then
+if [[ -n "$SSH_CLIENT" ]]; then
   PROMPT="%F{magenta}%n %F{8}@ %F{7}%1~ %F{8}%# %f"
 else
   PROMPT="%F{green}%n %F{8}@ %F{7}%1~ %F{8}%# %f"
