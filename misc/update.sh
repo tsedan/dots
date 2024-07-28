@@ -68,6 +68,9 @@ get_package_tools
 PACKAGES=$(curl -fsSL https://raw.githubusercontent.com/tsedan/dots/main/install/reqs.txt)
 install_packages $PACKAGES
 
+cprint "Setting default shell"
+chsh -s $(which zsh)
+
 if [[ ! -d ~/dots ]]; then
   cprint "Cloning dotfiles repo"
   git clone --recurse-submodules https://github.com/tsedan/dots.git ~/dots
