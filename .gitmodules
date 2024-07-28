@@ -1,6 +1,3 @@
 [submodule ".config/tmux/tpm"]
 	path = .config/tmux/tpm
 	url = https://github.com/tmux-plugins/tpm.git
-[submodule ".ssh"]
-	path = .ssh
-	url = https://github.com/tsedan/.ssh.git
