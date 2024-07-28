@@ -60,7 +60,7 @@ install_packages() {
 }
 
 cprint "Authenticating"
-sudo test
+sudo -v
 
 detect_os
 get_package_tools
@@ -68,8 +68,11 @@ get_package_tools
 PACKAGES=$(curl -fsSL https://raw.githubusercontent.com/tsedan/dots/main/misc/reqs.txt)
 install_packages $PACKAGES
 
-cprint "Setting default shell"
-chsh -s $(which zsh)
+if [[ -z $UPDATE ]]; then
+  cprint "Setting default shell"
+  sudo sh -c "echo $(which zsh) >> /etc/shells"
+  chsh -s $(which zsh)
+fi
 
 if [[ ! -d ~/dots ]]; then
   cprint "Cloning dotfiles repo"

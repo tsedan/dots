@@ -12,7 +12,7 @@ precmd() {
 }
 
 up() {
-  /bin/bash ~/dots/misc/update.sh
+  UPDATE=1 bash ~/dots/misc/install.sh
 }
 
 lt() {
