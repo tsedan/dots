@@ -27,4 +27,3 @@ fi
 if [[ $- =~ i ]] && [[ -z "$TMUX" ]] && [[ -n "$SSH_CLIENT" ]]; then
   tmux new -A -s ssh
 fi
-

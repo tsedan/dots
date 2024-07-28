@@ -1,4 +1,0 @@
-stow
-kitty
-neovim
-zsh-syntax-highlighting
