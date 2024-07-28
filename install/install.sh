@@ -14,7 +14,7 @@ get_install_tools() {
 }
 
 get_install_tools
-PACKAGES=$(curl -s "https://raw.githubusercontent.com/tsedan/dots/main/reqs.txt")
+PACKAGES=$(curl -s "https://raw.githubusercontent.com/tsedan/dots/main/install/reqs.txt")
 $INSTALL_CMD $PACKAGES
 
 chsh -s $(which zsh)
