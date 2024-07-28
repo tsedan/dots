@@ -7,7 +7,7 @@ They have the particular requirement that all packages must be available for bot
 
 To install:
 ```shell
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/tsedan/dots/main/install/update.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/tsedan/dots/main/misc/update.sh)"
 ```
 
-Afterwards, you can just run `up` to update.
+Afterwards, you can just run `up` in kitty to update.
