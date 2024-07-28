@@ -5,7 +5,7 @@ export TERM="xterm-256color"
 autoload -Uz vcs_info
 precmd() { vcs_info }
 include() { [[ -f "$1" ]] && source "$1" }
-lt() { tree -a -I '.git' -C --noreport -L "${1:-3}" }
+lt() { tree -a -I '.git' -C --noreport -L "${1:-2}" }
 tm() { tmux new -A -s "${1:-ssh}" }
 
 # aliases
