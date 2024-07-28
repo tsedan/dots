@@ -18,7 +18,13 @@ include ${ZPATH:-/usr}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # custom prompt
 autoload -Uz vcs_info
-zstyle ':vcs_info:git*' formats "%F{8}[%b]%f "
+
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:*' formats "%F{8}%c%u[%b]%f "
+zstyle ':vcs_info:*' stagedstr "%F{blue}"
+zstyle ':vcs_info:*' unstagedstr "%F{yellow}"
+
 precmd() { vcs_info }
 setopt prompt_subst
 
