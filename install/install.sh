@@ -16,9 +16,9 @@ else
   INSTALL_CMD="sudo apt install -y"
 fi
 
-get_install_tools
 fprint "Installing packages"
-$INSTALL_CMD "$(curl -fsSL https://raw.githubusercontent.com/tsedan/dots/main/install/reqs.txt)"
+PACKAGES=$(curl -fsSL https://raw.githubusercontent.com/tsedan/dots/main/install/reqs.txt)
+$INSTALL_CMD $PACKAGES
 
 fprint "Cloning dotfiles repo"
 git clone https://github.com/tsedan/dots.git ~/dots
