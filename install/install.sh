@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 fprint() {
-  echo -e "\033[0;31m$1\033[0m"
+  echo -e "\e[34m$1\e[0m"
 }
 
 PLATFORM=$(uname | tr '[:upper:]' '[:lower:]')
