@@ -1,4 +1,7 @@
 # dots
 
-This repo holds my dotfiles, which are built to work both on *NIX type systems.
-I regularly test them on Mac, Ubuntu, and sometimes Fedora.
+This repo holds my dotfiles, which are built to work on most *NIX type systems.
+They are meant to be as minimal as possible.
+
+They have the particular requirement that all packages must be available for both Mac (Homebrew) and Ubuntu (apt). I also sometimes test them on Fedora.
+

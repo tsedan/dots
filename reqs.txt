@@ -1,3 +1,0 @@
-bash zsh zsh-syntax-highlighting
-kitty neovim tree tmux
-

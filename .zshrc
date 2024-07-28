@@ -17,7 +17,13 @@ alias vi="nvim"
 alias py="python3"
 
 # zsh plugins
-include ${ZPATH:-/usr}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+PLATFORM=$(uname | tr '[:upper:]' '[:lower:]')
+if [[ "$PLATFORM" == 'darwin' ]]; then
+  ZPREFIX="/opt/homebrew"
+else
+  ZPREFIX="/usr"
+fi
+include "${ZPREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 # custom prompt
 zstyle ':vcs_info:*' enable git
