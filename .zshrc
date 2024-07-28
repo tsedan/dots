@@ -22,3 +22,9 @@ if [ -n "$SSH_CLIENT" ]; then
 else
   PROMPT="%F{green}%n %F{8}@ %F{7}%1~ %F{8}%# %f"
 fi
+
+# launch tmux when ssh'ed
+if [[ $- =~ i ]] && [[ -z "$TMUX" ]] && [[ -n "$SSH_CLIENT" ]]; then
+  tmux new -A -s ssh
+fi
+
