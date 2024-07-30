@@ -26,23 +26,14 @@ return {
 
   {
     "echasnovski/mini.starter",
-    version = false, -- wait till new 0.7.0 release to put it back on semver
     event = "VimEnter",
     opts = function()
       local logo = table.concat({
-        "                                         ____   ",
-        "                        ,--,           ,'  , `. ",
-        "      ,---,           ,--.'|        ,-+-,.' _ | ",
-        "  ,-+-. /  |     .---.|  |,      ,-+-. ;   , || ",
-        " ,--.'|'   |   /.  ./|`--'_     ,--.'|'   |  || ",
-        "|   |  ,'' | .-' . ' |,' ,'|   |   |  ,', |  |, ",
-        "|   | /  | |/___/ \\: |'  | |   |   | /  | |--' ",
-        "|   | |  | |.   \\  ' .|  | :   |   : |  | ,    ",
-        "|   | |  |/  \\   \\   ''  : |__ |   : |  |/    ",
-        "|   | |--'    \\   \\   |  | '.'||   | |`-'     ",
-        "|   |/         \\   \\ |;  :    ;|   ;/         ",
-        "'---'           '---' |  ,   / '---'            ",
-        "                       ---`-'                   ",
+        "                                   ",
+        " _ .--.  _   __  __   _ .--..--.   ",
+        "[ `.-. |[ \\ [  ][  | [ `.-. .-. | ",
+        " | | | | \\ \\/ /  | |  | | | | | |",
+        "[___||__] \\__/  [___][___||__||__]",
       }, "\n")
       local pad = string.rep(" ", 0)
       local new_section = function(name, action, section)
@@ -109,10 +100,9 @@ return {
           visible = true,
           show_hidden_count = true,
           hide_dotfiles = false,
-          hide_gitignored = true,
+          hide_gitignored = false,
           hide_by_name = {
             ".git",
-            ".DS_Store",
           },
           never_show = {},
         },

@@ -12,7 +12,7 @@ precmd() {
 }
 
 up() {
-  UPDATE=1 bash ~/dots/misc/install.sh
+  bash ~/dots/misc/install.sh
 }
 
 lt() {
@@ -35,10 +35,8 @@ alias py="python3"
 PLATFORM=$(uname | tr '[:upper:]' '[:lower:]')
 if [[ "$PLATFORM" == 'darwin' ]]; then
   ZPREFIX="/opt/homebrew"
-else
-  ZPREFIX="/usr"
 fi
-include "${ZPREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+include "${ZPREFIX:-/usr}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 # custom prompt
 zstyle ':vcs_info:*' enable git
