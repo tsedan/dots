@@ -29,8 +29,8 @@ detect_os() {
 get_package_tools() {
   if [[ "$OS" == "Ubuntu" || "$OS" == "Debian GNU/Linux" ]]; then
     cprint "Updating packages"
-    sudo apt update && sudo apt upgrade
-    INSTALL_CMD="sudo apt install -y"
+    sudo apt update -qq && sudo apt upgrade -qq
+    INSTALL_CMD="sudo apt install -qqq -y"
   elif [[ "$OS" == "MacOS" ]]; then
     if ! type brew &>/dev/null; then
       cprint "Installing homebrew"
@@ -38,7 +38,7 @@ get_package_tools() {
     fi
 
     cprint "Updating packages"
-    brew update && brew upgrade
+    brew update -q && brew upgrade -q
     INSTALL_CMD="brew install -q"
   else
     eprint "Unsupported OS: $OS"
@@ -51,10 +51,6 @@ sudo -v
 
 detect_os
 get_package_tools
-
-cprint "Installing packages"
-PACKAGES=$(curl -fsSL https://raw.githubusercontent.com/tsedan/dots/main/misc/reqs.txt)
-$INSTALL_CMD $PACKAGES
 
 if [[ -z $UPDATE ]]; then
   cprint "Setting default shell"
@@ -73,3 +69,11 @@ stow -D .
 git pull
 git submodule update --init --recursive
 stow .
+
+cprint "Validating dependencies"
+if [[ -f ~/dots/misc/reqs.txt ]]; then
+  PACKAGES=$(cat ~/dots/misc/reqs.txt)
+else
+  PACKAGES=$(curl -fsSL https://raw.githubusercontent.com/tsedan/dots/main/misc/reqs.txt)
+fi
+$INSTALL_CMD $PACKAGES
