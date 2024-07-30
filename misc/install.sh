@@ -63,6 +63,7 @@ else
   git submodule update --init --recursive
 fi
 
+cd ~/dots
 stow .
 
 cprint "Validating dependencies"
