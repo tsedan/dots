@@ -53,7 +53,9 @@ if [[ ! -d ~/dots ]]; then
   git clone --recurse-submodules https://github.com/tsedan/dots.git ~/dots
 
   cprint "Setting default shell"
-  sudo sh -c "echo $(which zsh) >> /etc/shells"
+  if ! grep -qxF "$(which zsh)" /etc/shells; then
+    sudo sh -c "echo $(which zsh) >> /etc/shells"
+  fi
   chsh -s $(which zsh)
 else
   cprint "Updating dotfiles"
