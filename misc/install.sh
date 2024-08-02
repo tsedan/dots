@@ -30,7 +30,11 @@ fi
 if [[ "$OS" == "Ubuntu" || "$OS" == "Debian GNU/Linux" ]]; then
   cprint "Updating packages"
   sudo apt update -qq && sudo apt upgrade -qq
-  INSTALL_CMD="sudo apt install -qqq -y"
+  INSTALL_CMD="sudo apt install -qq -y"
+elif [[ "$OS" == "Fedora Linux" ]]; then
+  cprint "Updating packages"
+  sudo dnf update -q
+  INSTALL_CMD="sudo dnf install -q -y"
 elif [[ "$OS" == "MacOS" ]]; then
   if ! type brew &>/dev/null; then
     cprint "Installing homebrew"
