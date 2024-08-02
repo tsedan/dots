@@ -16,7 +16,7 @@ up() {
 }
 
 lt() {
-  tree -a -I '.git' -C --noreport -L "${1:-2}"
+  tree --dirsfirst -a -I '.git' -C --noreport -L "${1:-2}"
 }
 
 tm() {
