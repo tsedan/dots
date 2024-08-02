@@ -34,9 +34,9 @@ alias py="python3"
 # zsh plugins
 PLATFORM=$(uname | tr '[:upper:]' '[:lower:]')
 if [[ "$PLATFORM" == 'darwin' ]]; then
-  ZPREFIX="/opt/homebrew"
+  BPREFIX=$(brew --prefix)
 fi
-include "${ZPREFIX:-/usr}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+include "${BPREFIX:-/usr}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 # custom prompt
 zstyle ':vcs_info:*' enable git
