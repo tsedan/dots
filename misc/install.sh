@@ -30,7 +30,7 @@ fi
 if [[ "$OS" == "Ubuntu" || "$OS" == "Debian GNU/Linux" ]]; then
   cprint "Updating packages"
   sudo apt update -qq && sudo apt upgrade -qq
-  INSTALL_CMD="sudo apt install -qq -y"
+  INSTALL_CMD="sudo apt install -qqq -y"
 elif [[ "$OS" == "Fedora Linux" ]]; then
   cprint "Updating packages"
   sudo dnf update -q
