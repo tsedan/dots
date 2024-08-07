@@ -42,14 +42,14 @@ include "${BPREFIX:-/usr}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
-zstyle ':vcs_info:*' formats "%F{8}%c%u%m[%b]%f "
+zstyle ':vcs_info:*' formats "%F{8}%m%c%u[%b]%f "
 zstyle ':vcs_info:*' stagedstr "%F{blue}"
 zstyle ':vcs_info:*' unstagedstr "%F{yellow}"
 setopt prompt_subst
 
 +vi-git-untracked() {
   if [[ -n "$(git ls-files --others --exclude-standard)" ]]; then
-    hook_com[misc]="%F{green}"
+    hook_com[unstaged]="%F{green}"
   fi
 }
 
