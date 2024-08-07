@@ -51,6 +51,10 @@ setopt prompt_subst
   if [[ -n "$(git ls-files --others --exclude-standard)" ]]; then
     hook_com[unstaged]="%F{green}"
   fi
+
+  if [[ -n "$(git cherry -v)" ]]; then
+    hook_com[misc]="%F{magenta}"
+  fi
 }
 
 if [[ -n "$SSH_CLIENT" ]]; then
