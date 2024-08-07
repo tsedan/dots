@@ -50,7 +50,7 @@ setopt prompt_subst
 +vi-track-git() {
   if [[ -n "$(git ls-files --others --exclude-standard)" ]]; then
     hook_com[unstaged]="%F{green}"
-  elif [[ -n "$(git cherry -v)" ]]; then
+  elif [[ -n "$(git cherry)" ]]; then
     hook_com[misc]="%F{magenta}"
   fi
 }
