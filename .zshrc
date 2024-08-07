@@ -6,11 +6,6 @@ include() {
   [[ -f "$1" ]] && source "$1"
 }
 
-autoload -Uz vcs_info
-precmd() {
-  vcs_info
-}
-
 up() {
   bash ~/dots/misc/install.sh
 }
@@ -38,7 +33,8 @@ if [[ "$PLATFORM" == 'darwin' ]]; then
 fi
 include "${BPREFIX:-/usr}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
-# custom prompt
+# git info
+autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:git*+set-message:*' hooks track-git
@@ -46,6 +42,9 @@ zstyle ':vcs_info:*' formats "%F{8}%m%c%u[%b]%f "
 zstyle ':vcs_info:*' stagedstr "%F{blue}"
 zstyle ':vcs_info:*' unstagedstr "%F{yellow}"
 setopt prompt_subst
+precmd() {
+  vcs_info
+}
 
 +vi-track-git() {
   if [[ -n "$(git ls-files --others --exclude-standard)" ]]; then
@@ -55,6 +54,7 @@ setopt prompt_subst
   fi
 }
 
+# custom prompt
 if [[ -n "$SSH_CLIENT" ]]; then
   PROMPT='%F{magenta}'
 else
