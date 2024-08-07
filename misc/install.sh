@@ -58,7 +58,7 @@ if ! sudo -v &>/dev/null; then
   if [[ "${response:-y}" == "y" || "$response" == "Y" ]]; then
     NOSUDO=1
   else
-    exit 0;
+    exit 0
   fi
 fi
 
@@ -89,7 +89,7 @@ else
   git submodule update --init --recursive
 
   if [ -z $NOSUDO ]; then
-    cprint "validating dependencies"
+    cprint "checking dependencies"
     PACKAGES=$(cat ~/dots/misc/reqs.txt)
     $INSTALL_CMD $PACKAGES
   fi
