@@ -15,11 +15,11 @@ up() {
   bash ~/dots/misc/install.sh
 }
 
-+lt() {
+lt() {
   tree --dirsfirst -a -I '.git' -C --noreport -L "${1:-2}"
 }
 
-+tm() {
+tm() {
   tmux new -A -s "${1:-ssh}"
 }
 
