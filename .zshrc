@@ -7,7 +7,7 @@ include() {
 }
 
 up() {
-  bash ~/dots/misc/install.sh
+  sh ~/dots/misc/install.sh
 }
 
 lt() {
