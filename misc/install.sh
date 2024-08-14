@@ -71,7 +71,7 @@ if [ ! -d ~/dots ]; then
   if [ -z "$NOSUDO" ]; then
     cprint "installing dependencies"
     PACKAGES=$(curl -fsSL https://raw.githubusercontent.com/tsedan/dots/HEAD/misc/reqs.txt | tr '\n' ' ')
-    $INSTALL_CMD $PACKAGES
+    eval $INSTALL_CMD $PACKAGES
 
     cprint "setting default shell"
     if ! grep -qxF "$(command -v zsh)" /etc/shells; then
@@ -92,7 +92,7 @@ else
   if [ -z "$NOSUDO" ]; then
     cprint "checking dependencies"
     PACKAGES=$(cat ~/dots/misc/reqs.txt | tr '\n' ' ')
-    $INSTALL_CMD $PACKAGES
+    eval $INSTALL_CMD $PACKAGES
   fi
 fi
 

@@ -1,7 +1,9 @@
 # exports
+
 export TERM="xterm-256color"
 
 # functions
+
 include() {
   [[ -f "$1" ]] && source "$1"
 }
@@ -25,6 +27,7 @@ make_venv() {
 }
 
 # aliases
+
 alias ls="ls --color=auto"
 alias la="ls -a --color=auto"
 alias ll="ls -al --color=auto"
@@ -33,15 +36,19 @@ alias vi="nvim"
 alias py="python3"
 
 # zsh plugins
+
 PLATFORM=$(uname | tr '[:upper:]' '[:lower:]')
 if [[ "$PLATFORM" == 'darwin' ]]; then
   BPREFIX=$(brew --prefix)
 fi
 include "${BPREFIX:-/usr}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
-eval "$(direnv hook zsh)"
+if command -v direnv >/dev/null 2>&1; then
+  eval "$(direnv hook zsh)"
+fi
 
 # git info
+
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' check-for-changes true
@@ -62,7 +69,8 @@ precmd() {
   fi
 }
 
-# custom prompt
+# prompt
+
 if [[ -n "$SSH_CLIENT" ]]; then
   PROMPT='%F{magenta}'
 else
