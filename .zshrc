@@ -18,6 +18,13 @@ tm() {
   tmux new -A -s "${1:-ssh}"
 }
 
+make_venv() {
+  python3 -m venv .env
+  echo "source .env/bin/activate" >> .envrc
+  echo "export VENV_STR='(venv) '" >> .envrc
+  direnv allow .
+}
+
 # aliases
 alias ls="ls --color=auto"
 alias la="ls -a --color=auto"
@@ -33,12 +40,14 @@ if [[ "$PLATFORM" == 'darwin' ]]; then
 fi
 include "${BPREFIX:-/usr}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
+eval "$(direnv hook zsh)"
+
 # git info
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:git*+set-message:*' hooks track-git
-zstyle ':vcs_info:*' formats "%F{8}%m%c%u[%b]%f "
+zstyle ':vcs_info:*' formats "%m%c%u[%b]%f "
 zstyle ':vcs_info:*' stagedstr "%F{blue}"
 zstyle ':vcs_info:*' unstagedstr "%F{yellow}"
 setopt prompt_subst
@@ -61,4 +70,4 @@ else
   PROMPT='%F{green}'
 fi
 PROMPT=$PROMPT'%n %F{8}@ %F{7}%1~ %F{8}%# %f'
-RPROMPT='${vcs_info_msg_0_}%(?.%F{8}.%F{red})%*%f'
+RPROMPT='%F{8}${VENV_STR}${vcs_info_msg_0_}%(?.%F{8}.%F{red})%*%f'
