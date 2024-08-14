@@ -21,7 +21,6 @@ tm() {
 make_venv() {
   python3 -m venv .env
   echo "source .env/bin/activate" >> .envrc
-  echo "export VENV_STR='(venv) '" >> .envrc
   direnv allow .
 }
 
@@ -70,4 +69,4 @@ else
   PROMPT='%F{green}'
 fi
 PROMPT=$PROMPT'%n %F{8}@ %F{7}%1~ %F{8}%# %f'
-RPROMPT='%F{8}${VENV_STR}${vcs_info_msg_0_}%(?.%F{8}.%F{red})%*%f'
+RPROMPT='%F{8}${VIRTUAL_ENV_PROMPT}${vcs_info_msg_0_}%(?.%F{8}.%F{red})%*%f'
