@@ -15,41 +15,41 @@ eprint() {
 update_packages() {
   OS=$(uname -s)
   case "$OS" in
-    "Linux")
-      if [ -f /etc/os-release ]; then
-        . /etc/os-release
-        OS=$NAME
-      elif [ -f /etc/lsb-release ]; then
-        . /etc/lsb-release
-        OS=$DISTRIB_ID
-      fi
-      ;;
+  "Linux")
+    if [ -f /etc/os-release ]; then
+      . /etc/os-release
+      OS=$NAME
+    elif [ -f /etc/lsb-release ]; then
+      . /etc/lsb-release
+      OS=$DISTRIB_ID
+    fi
+    ;;
   esac
 
   case "$OS" in
-    "Ubuntu"|"Debian GNU/Linux")
-      cprint "updating packages"
-      sudo apt update -qq && sudo apt upgrade -qq
-      INSTALL_CMD="sudo apt install -qqq -y"
-      ;;
-    "Fedora Linux")
-      cprint "updating packages"
-      sudo dnf update -q
-      INSTALL_CMD="sudo dnf install -q -y"
-      ;;
-    "Darwin")
-      if ! command -v brew >/dev/null 2>&1; then
-        cprint "installing homebrew"
-        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-      fi
-      cprint "updating packages"
-      brew update -q && brew upgrade -q
-      INSTALL_CMD="brew install -q"
-      ;;
-    *)
-      eprint "unsupported OS: $OS"
-      exit 1
-      ;;
+  "Ubuntu" | "Debian GNU/Linux")
+    cprint "updating packages"
+    sudo apt update -qq && sudo apt upgrade -qq -y
+    INSTALL_CMD="sudo apt install -qqq -y"
+    ;;
+  "Fedora Linux")
+    cprint "updating packages"
+    sudo dnf update -q
+    INSTALL_CMD="sudo dnf install -q -y"
+    ;;
+  "Darwin")
+    if ! command -v brew >/dev/null 2>&1; then
+      cprint "installing homebrew"
+      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    fi
+    cprint "updating packages"
+    brew update -q && brew upgrade -q
+    INSTALL_CMD="brew install -q"
+    ;;
+  *)
+    eprint "unsupported OS: $OS"
+    exit 1
+    ;;
   esac
 }
 
@@ -58,8 +58,8 @@ if ! sudo -v >/dev/null 2>&1; then
   pprint "proceed without sudo (Y/n)? "
   read response
   case "$response" in
-    [yY]|"") NOSUDO=1 ;;
-    *) exit 0 ;;
+  [yY] | "") NOSUDO=1 ;;
+  *) exit 0 ;;
   esac
 fi
 
@@ -98,3 +98,4 @@ fi
 
 cd ~/dots
 stow .
+
