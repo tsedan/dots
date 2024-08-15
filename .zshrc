@@ -62,7 +62,6 @@ precmd() {
 }
 
 +vi-track-git() {
-  git fetch
   if [[ -n "$(git ls-files --others --exclude-standard)" ]]; then
     hook_com[unstaged]="%F{green}"
   elif [[ -n "$(git cherry)" ]]; then
