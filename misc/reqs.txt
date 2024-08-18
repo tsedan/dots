@@ -1,4 +1,6 @@
 bash zsh
-git stow
 zsh-syntax-highlighting
-kitty neovim tree tmux direnv
+kitty
+git stow
+direnv
+neovim tree tmux

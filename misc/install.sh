@@ -98,4 +98,3 @@ fi
 
 cd ~/dots
 stow .
-
