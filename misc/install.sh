@@ -85,7 +85,7 @@ if [ ! -d ~/dots ]; then
 else
   cprint "updating dotfiles"
   cd ~/dots
-  stow -D .
+  stow -d stow -t .. -D .
   git pull
   git submodule update --init --recursive
 
@@ -97,4 +97,4 @@ else
 fi
 
 cd ~/dots
-stow .
+stow -d stow -t .. .
