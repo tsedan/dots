@@ -68,4 +68,3 @@ fi
 setopt prompt_subst
 PROMPT='%F{green}${SSH_PROMPT}%n %F{8}@ %F{7}%1~ %F{8}%# %f'
 RPROMPT='%F{8}${VIRTUAL_ENV_PROMPT}${vcs_info_msg_0_}%(?.%F{8}.%F{red})%*%f'
-

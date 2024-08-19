@@ -1,8 +1,6 @@
 # dots
 
-This repo holds my dotfiles.
-
-These dotfiles have the particular restriction that their dependencies must be available under the same name on at least Mac (Homebrew) and Ubuntu (apt).
+This repository holds my dotfiles (see stow folder).
 
 To install:
 ```shell
@@ -11,8 +9,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/tsedan/dots/HEAD/misc/inst
 
 To uninstall/unstow:
 ```shell
-sh ~/dots/misc/uninstall.sh"
+sh ~/dots/misc/uninstall.sh
 ```
 Keep in mind uninstalling won't remove dependencies.
 
-Afterwards, you can just run `up` in kitty to update your whole system, including the dotfiles.
+Afterwards, you can just run `up` in the shell to update the dotfiles and optionally your whole system.
