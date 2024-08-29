@@ -32,3 +32,9 @@ SETUVAR fish_pager_color_selected_background:\x2dr
 SETUVAR fish_greeting:\x1d
 
 SETUVAR prompt_suffix:>
+SETUVAR __fish_git_prompt_show_informative_status:1
+SETUVAR __fish_git_prompt_showuntrackedfiles:1
+SETUVAR __fish_git_prompt_showcolorhints:1
+SETUVAR __fish_git_prompt_char_stateseparator:' '
+SETUVAR __fish_git_prompt_color_prefix:brblack
+SETUVAR __fish_git_prompt_color_suffix:brblack

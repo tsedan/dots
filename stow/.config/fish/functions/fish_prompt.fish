@@ -9,8 +9,9 @@ function fish_prompt
     set color_cwd $fish_color_cwd_root
   end
 
-  printf '%s%s%s @ %s%s%s %s ' \
-    (set_color $color_host) $USER (set_color brblack) \
-    (set_color $color_cwd) (prompt_pwd) (set_color brblack) \
-    $prompt_suffix
+  echo -n -s \
+    (set_color $color_host) $USER \
+    (set_color brblack) ' @ ' \
+    (set_color $color_cwd) (prompt_pwd) \
+    (set_color brblack) ' ' $prompt_suffix ' '
 end
