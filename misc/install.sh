@@ -38,10 +38,11 @@ update_packages() {
     INSTALL_CMD="sudo dnf install -q -y"
     ;;
   "Darwin")
-    if ! command -v brew >/dev/null 2>&1; then
+    if [ ! -d /opt/homebrew/bin ]; then
       cprint "installing homebrew"
       /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     fi
+    PATH=/opt/homebrew/bin:$PATH
     cprint "updating packages"
     brew update -q && brew upgrade -q
     INSTALL_CMD="brew install -q"
