@@ -1,5 +1,13 @@
 if status is-interactive
-    # Commands to run in interactive sessions can go here
+  abbr -a up sh ~/dots/misc/install.sh
+
+  abbr -a v nvim
+  abbr -a py python3
+  abbr -a tm tmux new -A
+
+  abbr -a lt tree --dirsfirst -a -I '.git' -C --noreport --gitignore
 end
 
-direnv hook fish | source
+if type -q direnv
+  direnv hook fish | source
+end
