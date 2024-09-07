@@ -8,5 +8,5 @@ function fish_right_prompt --description 'Write out the right-aligned prompt'
   echo -n -s \
     (set_color brblack) (string trim $VIRTUAL_ENV_PROMPT) \
     (set_color brblack) (fish_vcs_prompt) \
-    (set_color $status_color) " $(date +%H:%M:%S)"
+    (set_color $status_color) " (date +%H:%M:%S)"
 end
