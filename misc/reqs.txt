@@ -2,4 +2,4 @@ fish
 kitty
 git stow
 direnv
-neovim tree tmux btop
+neovim tree tmux
