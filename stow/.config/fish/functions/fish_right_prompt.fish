@@ -1,7 +1,7 @@
 function fish_right_prompt --description 'Write out the right-aligned prompt'
   set -l last_status $pipestatus
   set -l status_color brblack
-  if test "$last_status" -ne 0
+  if string match -qr '[^0]' $last_status
     set status_color red
   end
 
