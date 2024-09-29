@@ -75,10 +75,10 @@ if [ ! -d ~/dots ]; then
     eval $INSTALL_CMD $PACKAGES
 
     cprint "setting default shell"
-    if ! grep -qxF "$(command -v fish)" /etc/shells; then
-      sudo sh -c "echo $(command -v fish) >> /etc/shells"
+    if ! grep -qxF "$(command -v zsh)" /etc/shells; then
+      sudo sh -c "echo $(command -v zsh) >> /etc/shells"
     fi
-    chsh -s "$(command -v fish)"
+    chsh -s "$(command -v zsh)"
   fi
 
   cprint "cloning dotfiles repo"
